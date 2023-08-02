@@ -3,6 +3,7 @@ import DefaultLayout from "../components/Layout/DefaultLayout";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { InputField } from "../components/InputField/InputField";
 import { Link, useNavigate } from "react-router-dom";
+import {toast} from "react-toastify"
 
 const LoginPage = () => {
   //declarig state variable
@@ -77,7 +78,7 @@ const LoginPage = () => {
               </div>
             </div>
           </Col>
-          <Col className="col-md-6 text-center bg-info d-flex align-item-center d-none d-md-flex">
+          <Col className="col-md-6 text-center register-info d-flex align-item-center d-none d-md-flex">
             <div>
               <h1>Welcome to Library Management System</h1>
               <hr />
