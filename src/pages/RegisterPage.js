@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import DefaultLayout from "../components/Layout/DefaultLayout";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { InputField } from "../components/InputField/InputField";
-import {toast} from "react-toastify"
+import { toast } from "react-toastify";
+import { postNewUser } from "../helpers/AxiosHelpers";
 
 const RegisterPage = () => {
   const [form, setForm] = useState({});
@@ -33,7 +34,7 @@ const RegisterPage = () => {
       label: "First Name",
       name: "fName",
       type: "text",
-      placeholder: "Sam",
+      placeholder: "John",
       required: true,
     },
     {
@@ -65,6 +66,7 @@ const RegisterPage = () => {
       required: true,
     },
   ];
+
   return (
     <DefaultLayout>
       <Container>

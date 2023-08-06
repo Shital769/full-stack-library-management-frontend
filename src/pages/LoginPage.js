@@ -4,6 +4,7 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { InputField } from "../components/InputField/InputField";
 import { Link, useNavigate } from "react-router-dom";
 import {toast} from "react-toastify"
+import { loginUser } from "../helpers/AxiosHelpers";
 
 const LoginPage = () => {
   //declarig state variable
@@ -74,7 +75,7 @@ const LoginPage = () => {
               </Form>
 
               <div className="text-center mt-3">
-                Don's have an Account? <Link to="/register">Register Now!</Link>
+                Don't have an Account? <Link to="/register">Register Now!</Link>
               </div>
             </div>
           </Col>
