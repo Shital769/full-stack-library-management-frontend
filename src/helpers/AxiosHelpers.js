@@ -5,6 +5,7 @@ const baseApiUrl =
 
 const userEndPoint = baseApiUrl + "/user";
 const bookEndPoint = baseApiUrl + "/book";
+const transactionEndPoint = baseApiUrl + "/transaction";
 
 //USER
 
@@ -195,6 +196,33 @@ export const returnBook = async (bookId) => {
         },
       }
     );
+    return data;
+  } catch (error) {
+    return {
+      status: "error",
+      message: error.message,
+    };
+  }
+};
+
+//Transaction
+
+export const getAllTransactions = async () => {
+  try {
+    const userId = getUserId();
+
+    if (!userId) {
+      return {
+        status: "error",
+        message: "Please login first!",
+      };
+    }
+    const { data } = await axios.get(transactionEndPoint, {
+      headers: {
+        Authorization: userId,
+      },
+    });
+
     return data;
   } catch (error) {
     return {
