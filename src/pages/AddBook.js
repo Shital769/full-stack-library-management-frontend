@@ -55,6 +55,7 @@ const AddBook = () => {
                   required
                   type="text"
                   name="title"
+                  onChange={handleChange}
                   value={formData.title}
                 />
               </Form.Group>
@@ -65,6 +66,8 @@ const AddBook = () => {
                   required
                   type="text"
                   name="author"
+                  onChange={handleChange}
+
                   value={formData.author}
                 />
               </Form.Group>
