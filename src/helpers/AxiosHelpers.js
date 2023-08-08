@@ -45,6 +45,34 @@ export const loginUser = async (userData) => {
   }
 };
 
+//update password
+export const updatePassword = async (passInfo) => {
+  try {
+    const userId = getUserId();
+    if (!userId) {
+      return {
+        status: "error",
+        message: "Please login first",
+      };
+    }
+    const { data } = await axios.patch(
+      userEndPoint + "/password-update",
+      passInfo,
+      {
+        headers: {
+          Authorization: userId,
+        },
+      }
+    );
+    return data;
+  } catch {
+    return {
+      status: "error",
+      message: error.message,
+    };
+  }
+};
+
 //BOOK
 
 //add books
