@@ -3,7 +3,7 @@ import DefaultLayout from "../components/Layout/DefaultLayout";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import { InputField } from "../components/InputField/InputField";
 import { Link, useNavigate } from "react-router-dom";
-import {toast} from "react-toastify"
+import { toast } from "react-toastify";
 import { loginUser } from "../helpers/AxiosHelpers";
 
 const LoginPage = () => {
@@ -59,13 +59,13 @@ const LoginPage = () => {
         <Row className="mt-5">
           <Col className="col-md-6 bg-primary p-5">
             <div className="bg-light p-4 rounded">
-              <Form>
+              <Form onSubmit={handleOnSubmit}>
                 <h2 className="text-center">Login</h2>
                 <hr />
 
-                {inputs.map((input, i) => {
-                  <InputField key={i} {...input} onChange={handleOnChange} />;
-                })}
+                {inputs.map((input, i) => (
+                  <InputField key={i} {...input} onChange={handleOnChange} />
+                ))}
 
                 <div>
                   <Button variant="primary" type="submit">

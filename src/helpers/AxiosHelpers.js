@@ -65,7 +65,7 @@ export const updatePassword = async (passInfo) => {
       }
     );
     return data;
-  } catch {
+  } catch (error) {
     return {
       status: "error",
       message: error.message,
@@ -170,6 +170,7 @@ export const deleteBook = async (bookId) => {
       data: { bookId },
       headers: { Authorization: userId },
     });
+    return data;
   } catch (error) {
     return {
       status: "error",

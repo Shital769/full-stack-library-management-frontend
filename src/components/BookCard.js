@@ -20,7 +20,7 @@ const BookCard = ({ book, fetchBooks }) => {
       if (bookId) {
         const { status, message } = await deleteBook(bookId);
 
-        toast[status](message) && fetchBooks;
+        toast[status](message) && fetchBooks();
       }
     }
   };

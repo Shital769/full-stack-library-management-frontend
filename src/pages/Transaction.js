@@ -1,6 +1,6 @@
 import React from "react";
 import DashboardLayout from "../components/Layout/DashboardLayout";
-import { Container, Table } from "react-bootstrap";
+import { Container, Table, Row } from "react-bootstrap";
 
 const Transaction = () => {
   return (
@@ -20,7 +20,7 @@ const Transaction = () => {
               </tr>
             </thead>
             <tbody>
-              {Transaction?.map((transaction, i) => {
+              {Transaction?.map((transaction, i) => (
                 <tr key={transaction._id} className="text-center">
                   <td>{i + 1}</td>
                   <td style={{ width: "15%" }}>
@@ -45,8 +45,8 @@ const Transaction = () => {
                       ? new Date(transaction.returnDate).toLocaleDateString()
                       : "Not returned yet?"}
                   </td>
-                </tr>;
-              })}
+                </tr>
+              ))}
             </tbody>
           </Table>
         </Row>
