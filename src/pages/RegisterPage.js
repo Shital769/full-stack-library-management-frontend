@@ -87,9 +87,9 @@ const RegisterPage = () => {
                 <h2>Register Now!</h2>
                 <hr />
 
-                {inputs.map((item, i) => {
-                  <InputField key={i} {...item} onChange={handleOnChange} />;
-                })}
+                {inputs.map((item, i) => (
+                  <InputField key={i} {...item} onChange={handleOnChange} />
+                ))}
 
                 <Form.Group className="mb-3">
                   <Form.Select name="role" onChange={handleOnChange} required>

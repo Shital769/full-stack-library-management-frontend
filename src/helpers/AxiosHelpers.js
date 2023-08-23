@@ -1,4 +1,4 @@
-// import axios from "axios";
+import axios from "axios";
 
 const baseApiUrl =
   process.env === "production" ? "/api/v1" : "http://localhost:8000/api/v1";
@@ -86,7 +86,7 @@ export const addBook = async (bookInfo) => {
         message: "Please login first!",
       };
     }
-    const { data } = await axios.post(bookEndPoint, {
+    const { data } = await axios.post(bookEndPoint, bookInfo, {
       headers: {
         Authorization: userId,
       },
